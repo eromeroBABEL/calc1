@@ -11,5 +11,16 @@ pipeline {
                 sh "./gradlew test"
             }
         }
+	stage("constuir") {
+	    steps {
+		sh "./gradle build"
+	     } 
+        }
+	stage("docker constuir") {
+	    steps {
+		sh "docker build -t localhost:5000/calculadora"
+	     } 
+        }
+
     }
 }
