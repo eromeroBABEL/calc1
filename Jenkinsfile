@@ -13,7 +13,7 @@ pipeline {
         }
 	stage("constuir") {
 	    steps {
-		sh "./gradle build"
+		sh "./gradlew build"
 	     } 
         }
 	stage("docker constuir") {
