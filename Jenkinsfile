@@ -1,3 +1,4 @@
+def control = 0
 pipeline {
     agent any
     stages {
@@ -47,7 +48,7 @@ pipeline {
 	
 	stage("comprobar funcionamiento") {
 	    steps {
-                def x= expression { sh script: '''if [ -z $(./lanzar_test.sh) ]; then true; else false; fi''', returnStatus: true
+                control = expression { sh script: '''if [ -z $(./lanzar_test.sh) ]; then true; else false; fi''', returnStatus: true
 
 	     } 
 	     } 
