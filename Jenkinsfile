@@ -44,5 +44,18 @@ pipeline {
 		sh "sudo docker run -d -p 9090:8090 --name calculadora  localhost:5000/calculadora"
 	     } 
         }
+	
+	stage("comprobar funcionamiento") {
+	    steps {
+                def x= expression { sh script: '''if [ -z $(docker ps -f name=calculadora -q) ]; then true; else false; fi''', returnStatus: true
+
+	     } 
+	     } 
+        }
+	stage("produccion") {
+	    steps {
+		sh "ansible-playbook playbook.yml"
+	     } 
+        }
     }
 }
