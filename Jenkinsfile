@@ -48,7 +48,9 @@ pipeline {
 	
 	stage("comprobar funcionamiento") {
 	    steps {
+                script { 
                 control = expression { sh script: '''if [ -z $(./lanzar_test.sh) ]; then true; else false; fi''', returnStatus: true
+                }
 
 	     } 
 	     } 
