@@ -23,6 +23,11 @@
       mode: a+x
     notify:
     - restart Calculator
+  - name: restart Calculator
+    service:
+      name: calculadora11
+      enabled: yes
+      state: restarted
   handlers:
   - name: restart Calculator
     service:
