@@ -1,4 +1,4 @@
-- hosts: nodo1
+- hosts: all
   become: yes
   become_method: sudo
   tasks:
