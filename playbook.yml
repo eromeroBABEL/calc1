@@ -26,6 +26,6 @@
   handlers:
   - name: restart Calculator
     service:
-      name: calculadora
+      name: calculadora11
       enabled: yes
       state: restarted
