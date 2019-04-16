@@ -51,7 +51,7 @@ pipeline {
                 script { 
                 control = expression { sh script: '''if [ -z $(./lanzar_test.sh) ]; then true; else false; fi''', returnStatus: true
                 }
-              echo ${control}
+              echo "${control}"
 
 	     } 
 	     } 
