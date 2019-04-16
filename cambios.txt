@@ -1,0 +1,5 @@
+ añadido docker-compose
+ modificado buil.gradle
+ añadido el fichero de cache de recis em CacheConfig.java
+modificado calculadora.java parea añadir cahce
+
