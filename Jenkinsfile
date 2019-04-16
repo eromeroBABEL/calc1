@@ -47,7 +47,7 @@ pipeline {
 	
 	stage("comprobar funcionamiento") {
 	    steps {
-                def x= expression { sh script: '''if [ -z $(docker ps -f name=calculadora -q) ]; then true; else false; fi''', returnStatus: true
+                def x= expression { sh script: '''if [ -z $(./lanzar_test.sh) ]; then true; else false; fi''', returnStatus: true
 
 	     } 
 	     } 
